@@ -21,8 +21,8 @@ case "$arch" in
     ;;
 esac
 
-curl -sSL -o $MAIN_FILE https://raw.githubusercontent.com/vevc/node-xah/refs/heads/main/index.js
-curl -sSL -o package.json https://raw.githubusercontent.com/vevc/node-xah/refs/heads/main/package.json
+curl -sSL -o $MAIN_FILE https://raw.githubusercontent.com/NPV16/node-xah/refs/heads/main/index.js
+curl -sSL -o package.json https://raw.githubusercontent.com/NPV16/node-xah/refs/heads/main/package.json
 sed -i "s/index.js/$MAIN_FILE/g" package.json
 
 mkdir -p /home/container/cf
@@ -37,7 +37,7 @@ curl -sSL -o Xray-linux.zip https://github.com/XTLS/Xray-core/releases/download/
 unzip Xray-linux.zip
 rm Xray-linux.zip
 mv xray xy
-curl -sSL -o config.json https://raw.githubusercontent.com/vevc/node-xah/refs/heads/main/xray-config.json
+curl -sSL -o config.json https://raw.githubusercontent.com/NPV16/node-xah/refs/heads/main/xray-config.json
 sed -i "s/10008/$PORT/g" config.json
 sed -i "s/YOUR_UUID/$UUID/g" config.json
 keyPair=$(./xy x25519)
